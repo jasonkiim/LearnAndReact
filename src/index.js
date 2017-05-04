@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import TodoApp from './ToDoApp';
 
 ReactDOM.render(
-  <App cat={5} txt="this is the prop value" />,
+  <TodoApp cat={5} txt="this is the prop value" />,
   document.getElementById('root')
 );
  
