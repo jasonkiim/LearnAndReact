@@ -1,18 +1,19 @@
 import React from 'react';
-
+import TodoListItem from './TodoListItem.js';
 export default class TodoList extends React.Component {
   render() {
-    return (
-      <ul>
-        {this.props.items.map((item, taskIndex) => 
-          <li key={item.id}>{item.text}
-          <button type="button" className="close" onClick={this.props.whatever} value={taskIndex}>Delete</button>
-		</li>
+      return (
+        <div>
+            {this.props.items.map((item, taskIndex) =>
 
-        )}
+        <TodoListItem
+        	{...this.props} 
+        	item={item} 
+        	taskIndex={taskIndex} 
+        />
 
-      </ul>
-    );
-
+    )}
+      </div>
+      );
   }
 }
