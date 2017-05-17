@@ -1,9 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TodoApp from './ToDoApp';
+import React from 'react'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
+import {createStore, applyMiddleware} from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
+import {createLogger} from 'redux-logger'
 
-ReactDOM.render(
-  <TodoApp cat={5} txt="this is the prop value" />,
-  document.getElementById('root')
-);
- 
+const logger = createLogger();
+let store = createStore(todoApp, applyMiddleware(logger))
+
+render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+    document.getElementById('root')
+)

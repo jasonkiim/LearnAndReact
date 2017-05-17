@@ -72,7 +72,8 @@ handleSubmit(e) {
         <TodoList
           items={this.state.items} 
            handleDelete={this.handleDelete} 
-           savefunc={this.handleSaveChange}/>
+           savefunc={this.handleSaveChange}
+        />
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} value={this.state.text} />
           <button>{'Add #' + (this.state.items.length + 1)}</button>
